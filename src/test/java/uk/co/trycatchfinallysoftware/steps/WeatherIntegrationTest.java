@@ -43,7 +43,7 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
     }
 
     @And("^(\\d+) days should be displayed$")
-    public void expects_days_to_be_displayed(int days) throws Throwable {
+    public void expects_number_of_days_to_be_displayed(int days) throws Throwable {
         List<WebElement> dayDivElementList = getWebDriver().findElements(
                 By.cssSelector("div[data-reactroot] > div")
         );
