@@ -24,7 +24,7 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
     }
 
     @And("^We have requested the correct application URL$")
-    public void application_url_is_browser_url() {
+    public void application_url_is_browser_url() throws Throwable {
         Assert.assertTrue("This might not be the application URL",
                 currentUrlIsApplication()
         );
@@ -43,7 +43,7 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
     }
 
     @And("^(\\d+) days should be displayed$")
-    public void expects_days_to_be_displayed(int days) {
+    public void expects_days_to_be_displayed(int days) throws Throwable {
         List<WebElement> dayDivElementList = getWebDriver().findElements(
                 By.cssSelector("div[data-reactroot] > div")
         );
