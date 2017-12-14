@@ -23,14 +23,14 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
         navigateToWeatherApplication();
     }
 
-    @And("^We have requested the correct application URL")
+    @And("^We have requested the correct application URL$")
     public void application_url_is_browser_url() {
         Assert.assertTrue("This might not be the application URL",
                 currentUrlIsApplication()
         );
     }
 
-    @Then("^I should see weather for the city (.+)")
+    @Then("^I should see weather for the city (.+)$")
     public void expected_city_is_displayed(String city) throws Throwable {
         String actualCity = getWebDriver()
                 .findElement(getByTestAttr("city"))
