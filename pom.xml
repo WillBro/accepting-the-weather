@@ -4,7 +4,7 @@
 
     <groupId>uk.co.trycatchfinallysoftware</groupId>
     <artifactId>accepting-weather</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-BETA1</version>
     <packaging>jar</packaging>
 
     <name>accepting-weather</name>
