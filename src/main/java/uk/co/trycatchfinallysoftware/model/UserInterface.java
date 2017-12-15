@@ -15,8 +15,8 @@ import java.util.List;
  */
 public class UserInterface {
 
-    private final static String COLLAPSE_CSS_VALUE = "max-height: 0px;";
-    private final static String EXPANDED_CSS_VALUE = "max-height: 2000px;";
+    public final static String COLLAPSE_CSS_VALUE = "max-height: 0px;";
+    public final static String EXPANDED_CSS_VALUE = "max-height: 2000px;";
 
     @FindBy(tagName = "h1")
     private WebElement headingElement;
@@ -28,10 +28,6 @@ public class UserInterface {
     private List<WebElement> dayDivElements;
 
     private List<DayForecast> dayForecasts;
-
-    public UserInterface() {
-        // Blank
-    }
 
     public String getHeadingText() {
         return headingElement.getText();

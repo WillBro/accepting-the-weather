@@ -2,8 +2,6 @@ package uk.co.trycatchfinallysoftware.model;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import java.util.List;
 
@@ -40,8 +38,13 @@ public class DayForecast {
     @FindBy(css = "span[data-test^=pressure]")
     private WebElement pressureElement;
 
-    public DayForecast(WebElement parentElement) {
-        PageFactory.initElements(new AjaxElementLocatorFactory(parentElement, 3), this);
+    @FindBy(className = "detail")
+    public List<WebElement> detailsElement;
+
+    private List<Detail> detailList;
+
+    public void setDetails(List<Detail> details) {
+        detailList = details;
     }
 
     public String getDateText() {
@@ -51,7 +54,7 @@ public class DayForecast {
     @Override
     public String toString() {
         return "DayForecast{" +
-                "dateElement=" + getDateText() +
+                "dateElement=" + dateElement.getText() +
                 ", day=" + dayElement.getText() +
                 ", description=" + descriptionElement.getAttribute("aria-label") +
                 ", maximum=" + maximumTempElement.getText() +
@@ -59,6 +62,7 @@ public class DayForecast {
                 ", speed=" + windSpeedElement.getText() +
                 ", rainfall=" + rainfallElement.getText() +
                 ", pressure=" + pressureElement.getText() +
+                ", detailsSize=" + detailsElement.size() +
                 '}';
     }
 }
