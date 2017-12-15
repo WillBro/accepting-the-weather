@@ -23,14 +23,14 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
         navigateToWeatherApplication();
     }
 
-    @And("^We have requested the correct application URL")
-    public void application_url_is_browser_url() {
+    @And("^We have requested the correct application URL$")
+    public void application_url_is_browser_url() throws Throwable {
         Assert.assertTrue("This might not be the application URL",
                 currentUrlIsApplication()
         );
     }
 
-    @Then("^I should see weather for the city (.+)")
+    @Then("^I should see weather for the city (.+)$")
     public void expected_city_is_displayed(String city) throws Throwable {
         String actualCity = getWebDriver()
                 .findElement(getByTestAttr("city"))
@@ -43,15 +43,15 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
     }
 
     @And("^(\\d+) days should be displayed$")
-    public void expects_days_to_be_displayed(int days) {
+    public void expects_number_of_days_to_be_displayed(int days) throws Throwable {
         List<WebElement> dayDivElementList = getWebDriver().findElements(
                 By.cssSelector("div[data-reactroot] > div")
         );
 
-        assertThat("5 days of forecast was not displayed", dayDivElementList.size(), is(4));
-
-        dayDivElementList.forEach(element -> {
-            System.out.println(element.findElement(By.cssSelector("span.name")).getText());
-        });
+        assertThat(
+                "5 days of forecast was not displayed",
+                dayDivElementList.size(),
+                is(5)
+        );
     }
 }
