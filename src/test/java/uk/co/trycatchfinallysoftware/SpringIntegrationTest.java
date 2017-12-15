@@ -5,24 +5,15 @@ import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 
-import javax.annotation.PreDestroy;
-
 /**
- * WebDriver navigation to Application, conveniences for selecting HTML elements
+ * WebDriver navigation to UserInterface, conveniences for selecting HTML elements
  * of test interest with data-test attribute.
  * @since 1.0
  */
 @ContextConfiguration(classes = App.class)
 public class SpringIntegrationTest {
 
-    @PreDestroy
-    public void quitDriver() {
-        if (getWebDriver() != null) {
-            getWebDriver().quit();
-        }
-    }
-
-    public static final String APPLICATION_URL = "https://weather-acceptance.herokuapp.com";
+    public static final String APPLICATION_URL = "https://weather-acceptance.herokuapp.com/";
 
     @Autowired
     private WebDriver webDriver;
