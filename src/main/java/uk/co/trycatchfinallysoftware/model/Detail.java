@@ -18,6 +18,7 @@ public class Detail {
     @FindBy(css = "span[data-test^=pressure]")
     private WebElement pressureElement;
 
+
     public int getCleanMaximum() {
         return NumberUtils.createInteger(cleanCelcius(maximum.getText()));
     }

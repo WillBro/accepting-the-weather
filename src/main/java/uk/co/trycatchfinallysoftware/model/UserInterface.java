@@ -10,8 +10,6 @@ import java.util.List;
 /**
  * Page Object which provides heading, city vaues as well as interaction
  * with the day div "rows".
- *
- * @since 1.0-BETA2
  */
 public class UserInterface {
 
@@ -27,7 +25,7 @@ public class UserInterface {
     @FindBy(css = "div[data-reactroot] > div")
     private List<WebElement> dayDivElements;
 
-    private List<DayForecast> dayForecasts;
+    private List<DayForecast> forecasts;
 
     public String getHeadingText() {
         return headingElement.getText();
