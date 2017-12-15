@@ -11,3 +11,4 @@ Feature: Weather Application
     When When I go to the Weather Application
     Then I should see weather for the city Glasgow
     And 5 days should be displayed
+    And no 3 hour forecast will be displayed
