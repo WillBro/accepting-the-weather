@@ -48,10 +48,10 @@ public class WeatherIntegrationTest extends SpringIntegrationTest {
                 By.cssSelector("div[data-reactroot] > div")
         );
 
-        assertThat("5 days of forecast was not displayed", dayDivElementList.size(), is(4));
-
-        dayDivElementList.forEach(element -> {
-            System.out.println(element.findElement(By.cssSelector("span.name")).getText());
-        });
+        assertThat(
+                "5 days of forecast was not displayed",
+                dayDivElementList.size(),
+                is(5)
+        );
     }
 }
