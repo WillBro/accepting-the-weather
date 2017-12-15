@@ -47,6 +47,11 @@ public class DayForecast {
         detailList = details;
     }
 
+    private boolean isToday = false;
+
+    public void setToday() {
+        isToday = true;
+    }
     public String getDateText() {
         return dateElement.getText();
     }
