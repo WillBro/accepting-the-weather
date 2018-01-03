@@ -37,6 +37,14 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **William Brown** - *Initial work* - [WillBro](https://github.com/WillBro)
 
+## Notes and limitations
+
+Given the 4 hours so far this is an imcomplete project with many of the features not yet covered. Largely, this was a result of wiring the Page Object Models first which could have been mocked to allow for the behaviours themselves to be covered first.
+
+As I had been using Spring recently I setup a Maven POM with the required dependencies which using a framework such as Serenity would have enabled to writing of tests sooner.
+
+If there was more time, naturally, this project would be dockerised to move the requirement of Java, Maven and any other dependencies to be packaged with the project. Approaching the problem again I would likely implement the Selenium Page Object Models last and stub/mock test scenarios.
+
 ## License
 
 This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE.md) file for details
